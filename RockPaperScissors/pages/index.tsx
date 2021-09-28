@@ -100,6 +100,7 @@ const Home: NextPage = () => {
   const [result, setResult] = useState("Choose to play");
 
   useEffect(() => {
+    console.log(playerMove, computerMove);
     if (playerMove && computerMove) {
       if (playerMove == computerMove) {
         setResult("Even!");
@@ -109,22 +110,28 @@ const Home: NextPage = () => {
             switch (computerMove) {
               case "Rock":
                 setResult("Player won!");
+                break;
               case "Scissors":
                 setResult("Computer won!");
+                break;
             }
           case "Rock":
             switch (computerMove) {
               case "Scissors":
                 setResult("Player won!");
+                break;
               case "Paper":
                 setResult("Computer won!");
+                break;
             }
           case "Scissors":
             switch (computerMove) {
               case "Paper":
                 setResult("Player won!");
+                break;
               case "Rock":
                 setResult("Computer won!");
+                break;
             }
         }
       }
